@@ -3,392 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mana Dhamaka Events brings the Telugu community in Stockhlolm, Sweden together through festivals, parties, picnics and cultural celebrations.">
-  <title>Mana Dhamaka Events | Telugu Community Stockholm</title>
+  <meta name="description" content="Mana Dhamaka Events — Telugu community celebrations in Stockholm,Sweden.">
+  <title>Mana Dhamaka Events | Telugu Community in Sweden</title>
   <style>
-    :root {
-      --orange: #f47721;
-      --red: #a92e32;
-      --gold: #ffc65c;
-      --purple: #462454;
-      --cream: #fff8ee;
-      --ink: #33243a;
-      --muted: #756b79;
-      --green: #176b43;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--cream);
-    }
-    header {
-      background: var(--purple);
-      color: white;
-      padding: 15px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .brand { font-weight: 900; font-size: 21px; }
-    .brand span { color: var(--gold); }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a { color: white; text-decoration: none; font-size: 14px; }
-    nav a:hover { color: var(--gold); }
-    .hero {
-      text-align: center;
-      padding: 90px 20px;
-      color: white;
-      background:
-        radial-gradient(circle at 15% 20%, #f6a44c 0, transparent 28%),
-        radial-gradient(circle at 85% 80%, #9c3b59 0, transparent 35%),
-        linear-gradient(130deg, #462454, #9a3036, #e87520);
-    }
-    .eyebrow { letter-spacing: 3px; text-transform: uppercase; font-size: 12px; }
-    .hero h1 { font-size: clamp(38px, 7vw, 70px); margin: 18px 0 8px; }
-    .hero h2 { font-size: 25px; color: var(--gold); margin: 0; }
-    .hero p { font-size: 18px; line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 30px;
-      background: var(--orange);
-      color: white;
-      text-decoration: none;
-      border: 0;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .btn:hover { filter: brightness(.94); }
-    .btn.light { background: white; color: var(--purple); }
-    .hero .btn { margin: 10px 5px; }
-    .whatsapp { background: var(--green); }
-    section { padding: 62px 7%; }
-    .section-title { text-align: center; margin-bottom: 34px; }
-    .section-title h2 { font-size: 32px; margin: 0 0 8px; }
-    .section-title p { color: var(--muted); }
-    .events, .team {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 5px 22px #39204412;
-    }
-    .event-art {
-      height: 145px;
-      display: grid;
-      place-items: center;
-      font-size: 64px;
-      background: linear-gradient(135deg, #ffe3b3, #f7a55e);
-    }
-    .event-art.purple { background: linear-gradient(135deg, #f2d6f5, #a78ac7); }
-    .event-art.green { background: linear-gradient(135deg, #d7f0d6, #86bc91); }
-    .event-art.red { background: linear-gradient(135deg, #ffd5ca, #e98b75); }
-    .card-content { padding: 20px; }
-    .card h3 { margin: 8px 0; }
-    .card p { color: var(--muted); line-height: 1.5; font-size: 14px; }
-    .tag {
-      display: inline-block;
-      color: #a34d1c;
-      background: #fff0df;
-      border-radius: 20px;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: bold;
-    }
-    .card .btn { margin-top: 8px; padding: 10px 16px; font-size: 13px; }
-    .about { background: #fff0df; text-align: center; }
-    .about p { max-width: 760px; margin: auto; line-height: 1.8; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 12px;
-    }
-    .gallery-item {
-      min-height: 155px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      font-size: 48px;
-      background: linear-gradient(140deg, #f9c879, #e98b69);
-    }
-    .gallery-item:nth-child(2n) { background: linear-gradient(140deg, #d9b8df, #916caa); }
-    .gallery-item:nth-child(3n) { background: linear-gradient(140deg, #c2e4ce, #75a78b); }
-    .registration { background: #f6e8f3; }
-    .form {
-      max-width: 650px;
-      margin: auto;
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 5px 22px #39204412;
-    }
-    label { display: block; font-weight: bold; margin: 15px 0 7px; }
-    input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ddd2df;
-      border-radius: 9px;
-      font: inherit;
-      background: white;
-    }
-    .form button { margin-top: 20px; width: 100%; }
-    .note { font-size: 12px; color: var(--muted); line-height: 1.5; }
-    .team-card {
-      text-align: center;
-      background: white;
-      padding: 24px;
-      border-radius: 15px;
-    }
-    .avatar {
-      width: 65px; height: 65px; border-radius: 50%;
-      background: #ffead0; display: grid; place-items: center;
-      font-size: 30px; margin: auto auto 12px;
-    }
-    footer {
-      background: var(--purple);
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-    footer p { color: #e8dbea; font-size: 14px; }
-    @media (max-width: 650px) {
-      header { justify-content: center; }
-      nav { justify-content: center; gap: 12px; }
-      .hero { padding: 65px 16px; }
-      section { padding: 48px 5%; }
-      .form { padding: 20px; }
-    }
+    :root{--ink:#25213a;--muted:#655f73;--purple:#54218a;--orange:#f28b24;--cream:#fff9f0;--pink:#ffe8e2;--green:#176b45}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+    a{color:inherit} .wrap{width:min(1100px,92%);margin:auto}
+    header{background:#fff;position:sticky;top:0;z-index:5;border-bottom:1px solid #eee}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 0;flex-wrap:wrap}
+    .brand{font-weight:800;color:var(--purple);font-size:1.15rem}.brand small{display:block;font-size:.75rem;color:var(--muted);font-weight:500}
+    nav .links{display:flex;gap:18px;flex-wrap:wrap} nav a{text-decoration:none;font-weight:700;font-size:.92rem}
+    .hero{background:linear-gradient(120deg,#4b197b,#842b91 58%,#f28b24);color:#fff;padding:76px 0;text-align:center}
+    .hero h1{font-size:clamp(2.2rem,6vw,4.2rem);margin:0 0 14px}.hero p{font-size:1.15rem;max-width:700px;margin:0 auto 25px;line-height:1.6}
+    .btn{display:inline-block;text-decoration:none;border-radius:999px;padding:13px 22px;font-weight:800;background:var(--orange);color:#24152e}
+    .btn.light{background:#fff;color:var(--purple)} .btn.outline{background:transparent;color:var(--purple);border:2px solid var(--purple)}
+    section{padding:58px 0} h2{text-align:center;color:var(--purple);font-size:2rem;margin:0 0 14px}
+    .intro{text-align:center;color:var(--muted);max-width:760px;line-height:1.65;margin:0 auto 30px}
+    .membership{background:var(--cream)} .membership-card{max-width:780px;margin:auto;background:white;border:1px solid #f1dfc9;border-radius:20px;padding:28px;box-shadow:0 10px 30px #4b197b12}
+    .price{text-align:center;color:var(--purple);font-size:2.8rem;font-weight:900;margin:8px 0}.pill{display:inline-block;background:#e5f5eb;color:var(--green);padding:7px 12px;border-radius:30px;font-weight:800;font-size:.85rem}
+    .center{text-align:center}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:25px 0}
+    .step{background:#fff9f4;border-radius:14px;padding:17px;line-height:1.5}.step b{display:block;color:var(--purple);margin-bottom:6px}
+    .notice{background:#fff1dc;border-left:4px solid var(--orange);padding:14px 16px;border-radius:8px;line-height:1.55;margin:20px 0}
+    .events{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .event{border:1px solid #eee;border-radius:16px;padding:22px;background:#fff;box-shadow:0 5px 20px #00000008}
+    .event .emoji{font-size:2rem}.event h3{color:var(--purple);margin:10px 0 6px}.event p{color:var(--muted);line-height:1.5}
+    .about{background:#fbf7ff}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+    .tile{min-height:120px;border-radius:15px;background:var(--pink);display:grid;place-items:center;font-size:2.6rem}
+    footer{background:#26143d;color:#fff;text-align:center;padding:28px 0;line-height:1.7}
+    @media(max-width:600px){nav{justify-content:center}.links{justify-content:center}.hero{padding:58px 0}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">🔥 Mana <span>Dhamaka</span> Events</div>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#events">Events</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#register">Register</a>
-      <a href="#contact">Contact</a>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">మన ధమాకా ఈవెంట్స్ <small>Mana Dhamaka Events</small></div>
+      <div class="links">
+        <a href="#membership">Membership</a><a href="#events">Events</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </div>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="eyebrow">మన తెలుగు కమ్యూనిటీ • Sweden</div>
+<main>
+  <div class="hero">
+    <div class="wrap">
       <h1>Mana Dhamaka Events</h1>
-      <h2>మన ధమాకా ఈవెంట్స్</h2>
-      <p>One Community. Endless Celebrations.<br>
-        Bringing Telugu traditions, friendships and celebrations together in Stockholm, Sweden.</p>
-      <a class="btn" href="#events">Explore Events 🎉</a>
-      <a class="btn light" href="#register">Family Registration</a>
-      <!-- Replace the # below with your WhatsApp group invitation URL. -->
-      <p><a class="btn whatsapp" href="#" id="whatsappLink" target="_blank" rel="noopener">Join Our WhatsApp Community 💬</a></p>
-    </section>
+      <p>One Community. Endless Celebrations.</p>
+      <p>Bringing Telugu families together across Sweden through festivals, culture, picnics, BBQs and unforgettable memories.</p>
+      <a class="btn light" href="#membership">Become a Family Member</a>
+    </div>
+  </div>
 
-    <section id="events">
-      <div class="section-title">
-        <h2>🎊 What's Happening?</h2>
-        <p>From traditional festivals to unforgettable summer parties.</p>
+  <section class="membership" id="membership">
+    <div class="wrap">
+      <h2>Family Membership</h2>
+      <p class="intro">Join our Telugu community in Sweden. Membership is required before registering for Mana Dhamaka events.</p>
+      <div class="membership-card">
+        <div class="center"><span class="pill">One-time family membership</span></div>
+        <div class="price">50 SEK <span style="font-size:1rem;font-weight:600">/ family</span></div>
+        <p class="center">Pay once per family — no annual renewal fee.</p>
+        <div class="steps">
+          <div class="step"><b>1. Apply</b>Submit your family's membership details using our registration form.</div>
+          <div class="step"><b>2. Pay by Swish</b>Swish <strong>50 SEK</strong> to <strong>0767809741</strong>.</div>
+          <div class="step"><b>3. Await verification</b>Organisers check your application and payment.</div>
+          <div class="step"><b>4. Get approved</b>After approval, your family can register for community events.</div>
+        </div>
+        <div class="notice"><strong>Important:</strong> Submitting the form or making a payment does not automatically activate membership. Your membership is pending until the organisers verify the payment and approve your application.</div>
+        <p><strong>Swish message:</strong> Mana Dhamaka – [Family Name]</p>
+        <div class="center" style="margin-top:24px">
+          <a class="btn" href="https://forms.gle/S5URY4QRsn1to2rC8" target="_blank" rel="noopener noreferrer">Apply for Family Membership</a>
+        </div>
+        <p class="center" style="font-size:.88rem;color:#655f73;margin-top:14px">The membership form opens securely in Google Forms.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <h2>Our Celebrations</h2>
+      <p class="intro">A year full of traditions, togetherness and fun for the whole family.</p>
       <div class="events">
-        <article class="card">
-          <div class="event-art">🪔</div>
-          <div class="card-content">
-            <span class="tag">CULTURAL FESTIVAL</span>
-            <h3>Sankranti Celebrations</h3>
-            <p>Celebrate Telugu traditions with festive fun, food, music and family activities.</p>
-            <p><strong>📅 Date:</strong> To be announced</p>
-            <a class="btn" href="#register" data-event="Sankranti Celebrations">Register interest</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="event-art purple">🌸</div>
-          <div class="card-content">
-            <span class="tag">FESTIVAL</span>
-            <h3>Ugadi Utsavam</h3>
-            <p>Welcome the Telugu New Year with culture, delicious food and togetherness.</p>
-            <p><strong>📅 Date:</strong> To be announced</p>
-            <a class="btn" href="#register" data-event="Ugadi Utsavam">Register interest</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="event-art green">☀️</div>
-          <div class="card-content">
-            <span class="tag">SUMMER SPECIAL</span>
-            <h3>Summer Picnic &amp; BBQ</h3>
-            <p>Outdoor games, great food, music and a lovely day with our community.</p>
-            <p><strong>📅 Date:</strong> To be announced</p>
-            <a class="btn" href="#register" data-event="Summer Picnic & BBQ">Register interest</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="event-art red">🎆</div>
-          <div class="card-content">
-            <span class="tag">PARTY &amp; CELEBRATION</span>
-            <h3>Diwali Dhamaka</h3>
-            <p>Lights, dance, music, festive food and a celebration to remember.</p>
-            <p><strong>📅 Date:</strong> To be announced</p>
-            <a class="btn" href="#register" data-event="Diwali Dhamaka">Register interest</a>
-          </div>
-        </article>
+        <article class="event"><div class="emoji">🪁</div><h3>Sankranti</h3><p>Celebrate harvest traditions, culture, food and community.</p></article>
+        <article class="event"><div class="emoji">🌸</div><h3>Ugadi</h3><p>Welcome the Telugu New Year with joy and togetherness.</p></article>
+        <article class="event"><div class="emoji">☀️</div><h3>Summer Picnic & BBQ</h3><p>Enjoy outdoor fun, food, games and family time.</p></article>
+        <article class="event"><div class="emoji">🪔</div><h3>Diwali</h3><p>Celebrate the festival of lights with music, culture and happiness.</p></article>
       </div>
-    </section>
+      <div class="notice" style="max-width:780px;margin:25px auto 0"><strong>Event registrations:</strong> Event registration details will be shared with approved Mana Dhamaka family members. Please apply for membership first.</div>
+    </div>
+  </section>
 
-    <section class="about" id="about">
-      <div class="section-title">
-        <h2>❤️ Mana Community, Mana Sambaram</h2>
-        <p>Our traditions. Our friendships. Our celebrations.</p>
-      </div>
-      <p>
-        Mana Dhamaka Events is a community initiative bringing Telugu families
-        and friends together across Sweden. Our aim is to celebrate our culture,
-        create new friendships and make beautiful memories through festivals,
-        cultural activities, parties, summer picnics and family gatherings.
-        Everyone is welcome to join the fun!
-      </p>
-    </section>
-
-    <section id="gallery">
-      <div class="section-title">
-        <h2>📸 Celebration Memories</h2>
-        <p>A space for our community's special moments.</p>
-      </div>
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>About Our Community</h2>
+      <p class="intro">Mana Dhamaka Events brings Telugu people and families in Sweden together. From cultural festivals to summer gatherings and BBQs, our goal is to create a welcoming community where traditions continue and friendships grow.</p>
       <div class="gallery">
-        <div class="gallery-item" aria-label="Festival lamp">🪔</div>
-        <div class="gallery-item" aria-label="Dance">💃</div>
-        <div class="gallery-item" aria-label="Celebration">🎉</div>
-        <div class="gallery-item" aria-label="Food">🍛</div>
-        <div class="gallery-item" aria-label="Summer">☀️</div>
-        <div class="gallery-item" aria-label="Music">🎶</div>
+        <div class="tile" aria-label="Festival">🎉</div><div class="tile" aria-label="Culture">🥁</div><div class="tile" aria-label="Food">🍲</div><div class="tile" aria-label="Family">👨‍👩‍👧‍👦</div><div class="tile" aria-label="Celebration">🎊</div>
       </div>
-      <p class="note" style="text-align:center;margin-top:18px">
-        These are placeholders. Add real community photos after receiving permission to share them.
-      </p>
-    </section>
+    </div>
+  </section>
 
-    <section class="registration" id="register">
-      <div class="section-title">
-        <h2>🥳 Family Event Registration</h2>
-        <p>Register your family’s interest in upcoming events.</p>
-      </div>
-      <form class="form" id="eventForm">
-        <label for="family">Family name *</label>
-        <input id="family" name="family" required placeholder="Enter family name">
+  <section id="contact">
+    <div class="wrap center">
+      <h2>Questions?</h2>
+      <p class="intro">For membership or event questions, please contact the Mana Dhamaka organisers.</p>
+      <p>We look forward to celebrating with you!</p>
+    </div>
+  </section>
+</main>
 
-        <label for="email">Contact email *</label>
-        <input id="email" name="email" type="email" required placeholder="you@example.com">
-
-        <label for="phone">Phone number (optional)</label>
-        <input id="phone" name="phone" type="tel" placeholder="Include country code">
-
-        <label for="event">Choose an event *</label>
-        <select id="event" name="event" required>
-          <option value="">Select an event</option>
-          <option>Sankranti Celebrations</option>
-          <option>Ugadi Utsavam</option>
-          <option>Summer Picnic &amp; BBQ</option>
-          <option>Diwali Dhamaka</option>
-          <option>Future community events</option>
-        </select>
-
-        <label for="adults">Number of adults *</label>
-        <select id="adults" name="adults" required>
-          <option value="1">1</option><option value="2" selected>2</option>
-          <option value="3">3</option><option value="4">4</option>
-          <option value="5">5</option><option value="6">6</option>
-          <option value="7">7</option><option value="8">8+</option>
-        </select>
-
-        <label for="children">Number of children</label>
-        <select id="children" name="children">
-          <option value="0" selected>0</option><option value="1">1</option>
-          <option value="2">2</option><option value="3">3</option>
-          <option value="4">4</option><option value="5">5</option>
-          <option value="6">6+</option>
-        </select>
-
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" rows="3"
-          placeholder="Questions or information for the organisers"></textarea>
-
-        <button class="btn" type="submit">Submit Family Registration 🎉</button>
-        <p class="note">
-          Demo form: submissions are not stored or sent yet. Connect a form service
-          (for example, Google Forms) before accepting real registrations.
-        </p>
-        <p id="formMessage" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-
-    <section id="contact">
-      <div class="section-title">
-        <h2>🤝 Our Organising Team</h2>
-        <p>More information about our organisers will be added soon.</p>
-      </div>
-      <div class="team">
-        <div class="team-card">
-          <div class="avatar">🎤</div>
-          <h3>Event Coordination</h3>
-          <p>Planning and organising celebrations.</p>
-        </div>
-        <div class="team-card">
-          <div class="avatar">🎨</div>
-          <h3>Activities &amp; Culture</h3>
-          <p>Bringing traditions and entertainment to life.</p>
-        </div>
-        <div class="team-card">
-          <div class="avatar">📣</div>
-          <h3>Community Connect</h3>
-          <p>Keeping everyone informed and connected.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <h2>🔥 Mana Dhamaka Events</h2>
-    <p>మన ధమాకా ఈవెంట్స్</p>
-    <p>One Community. Endless Celebrations. ❤️</p>
-    <p>Telugu Community • Sweden</p>
-    <p>© <span id="year"></span> Mana Dhamaka Events</p>
-  </footer>
-
-  <script>
-    // Add your WhatsApp group invitation link between the quotes.
-    const WHATSAPP_INVITE_URL = "";
-    const whatsappLink = document.getElementById("whatsappLink");
-    if (WHATSAPP_INVITE_URL) {
-      whatsappLink.href = WHATSAPP_INVITE_URL;
-    } else {
-      whatsappLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        alert("The WhatsApp community invitation link will be added soon.");
-      });
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.querySelectorAll("[data-event]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        document.getElementById("event").value = button.dataset.event;
-      });
-    });
-
-    document.getElementById("eventForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      document.getElementById("formMessage").textContent =
-        "Thanks for your interest! This demo form does not send or save registrations yet. Please contact the organisers once registration is officially open.";
-    });
-  </script>
+<footer>
+  <div class="wrap">మన ధమాకా ఈవెంట్స్ · Mana Dhamaka Events<br>One Community. Endless Celebrations.</div>
+</footer>
 </body>
 </html>
